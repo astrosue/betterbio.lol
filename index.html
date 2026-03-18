@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e4298afa6a.js" crossorigin="anonymous"></script>
+    <script src="config.js"></script>
+    
+</head>
+<body>
+    <script src="text.js"></script>
+    <img class="gif" id="bg-gif" src="" alt="Background">
+
+    <div id="enter-overlay" class="enter-overlay" aria-hidden="false">
+        <div class="enter-card">
+            <div class="enter-title" id="enter-title">click to enter</div>
+            <div class="enter-subtitle" id="enter-subtitle">sound on</div>
+        </div>
+    </div>
+
+    <audio id="bg-music" preload="auto" loop>
+        <source id="music-src" src="" type="audio/mpeg">
+    </audio>
+
+    <div class="profile-card">
+        <div class="profile-header">
+            <img class="profile-header" id="avatar" src="" alt="Avatar">
+            <h1 class="nickname" id="nickname">astrosue</h1>
+            
+            <div class="music-player music-player--card" id="music-player" aria-hidden="true">
+                <div class="music-player__cover" id="player-cover" aria-hidden="true"></div>
+                <div class="music-player__main">
+                    <div class="music-player__top">
+                        <div class="music-player__meta">
+                            <div class="music-player__title" id="player-title">Now playing</div>
+                            <div class="music-player__subtitle" id="player-subtitle">sounds</div>
+                        </div>
+                        <button class="music-player__btn" id="player-play" type="button" aria-label="Play / Pause">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+        
+                    <div class="music-player__seek">
+                        <input class="music-player__range" id="player-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek">
+                        <div class="music-player__times">
+                            <span class="music-player__time" id="player-time-current">0:00</span>
+                            <span class="music-player__time" id="player-time-total">0:00</span>
+                        </div>
+                    </div>
+        
+                    <div class="music-player__controls">
+                        <i class="fa-solid fa-volume-low music-player__icon" aria-hidden="true"></i>
+                        <input class="music-player__range" id="player-volume" type="range" min="0" max="1" value="0.6" step="0.01" aria-label="Volume">
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-buttons">
+                <a href="https://www.youtube.com/@aaz-n3e" class="youtube-btn">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://discord.gg/TaJ6V5zZ" class="discord-btn">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="https://t.me/astrosue" class="telegram-btn">
+                    <i class="fa-brands fa-telegram-plane"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
