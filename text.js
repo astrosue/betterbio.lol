@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const enterSubtitle = document.getElementById("enter-subtitle");
     const nickname = document.getElementById("nickname");
     const avatar = document.getElementById("avatar");
+    const githubWatermark = document.getElementById("github-watermark");
 
     const STORAGE_KEY = "bio_entered_v1";
     const alreadyEntered = localStorage.getItem(STORAGE_KEY) === "1";
@@ -115,8 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 setPlayIcon(true);
                 if (player) player.setAttribute("aria-hidden", "false");
             } catch (e) {
-                // Autoplay может быть заблокирован, но клик обычно разрешает.
-                // Если браузер всё равно блокирует, просто оставляем сайт без музыки.
             }
         }
     };
@@ -176,12 +175,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Apply config to DOM
     if (bgGif && CFG.backgroundGifSrc) bgGif.src = CFG.backgroundGifSrc;
     if (enterTitle && CFG.enterOverlay?.title) enterTitle.textContent = CFG.enterOverlay.title;
     if (enterSubtitle && CFG.enterOverlay?.subtitle) enterSubtitle.textContent = CFG.enterOverlay.subtitle;
     if (nickname && CFG.nickname) nickname.textContent = CFG.nickname;
     if (avatar && CFG.avatarSrc) avatar.src = CFG.avatarSrc;
+    if (githubWatermark && CFG.enableWatermark === false) githubWatermark.style.display = "none";
 
     if (music && musicSrc && CFG.music?.src) {
         musicSrc.src = CFG.music.src;
@@ -194,8 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMetaFromSource();
     syncUI();
 
-    // If user already entered before, show UI immediately (no overlay).
-    // Music still requires a user gesture to play in most browsers.
     if (alreadyEntered) {
         started = true;
         document.body.classList.remove("locked");

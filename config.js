@@ -2,6 +2,8 @@ window.SITE_CONFIG = {
   pageTitle: "astrosue bio | lol",
   nickname: "astrosue",
 
+  enableWatermark: true,
+
   avatarSrc: "images/avatar.jpg",
   backgroundGifSrc:
     "https://media1.tenor.com/m/KQG5JPLWBkQAAAAC/lelouch-vi-britannia-code-geass.gif",
